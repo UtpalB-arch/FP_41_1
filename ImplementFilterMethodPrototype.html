@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            // The global variable
+            var s = [23, 65, 98, 5];
+
+            Array.prototype.myFilter = function(callback) {
+            // Only change code below this line
+            var newArray = [];
+            for(let i=0; i<this.length; i++){
+                if(callback(this[i]) === true){
+                    newArray.push(this[i]);
+                }                
+            }
+            // Only change code above this line
+            return newArray;
+            };
+
+            var new_s = s.myFilter(function(item) {
+            return item % 2 === 1;
+            });
+            console.log(new_s);
+        </script>
+    </body>
+</html>
