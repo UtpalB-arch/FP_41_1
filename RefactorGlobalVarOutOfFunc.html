@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            // The global variable
+            var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+            //let bookListLength = bookList.length; //Length of the bookList Array
+            //console.log(bookListLength);
+            
+            // Change code below this line
+            function add (bookList2, bookName) {
+                let bookListLength = bookList2.length;
+                let firstNewBookList = [];
+                for(let i = 0; i < bookListLength; i++)
+                {firstNewBookList.push(bookList2[i]);}
+                firstNewBookList.push(bookName);
+            //bookList.push(bookName);
+            return firstNewBookList;
+            
+            // Change code above this line
+            }
+
+            // Change code below this line
+            function remove (bookList1, bookName) {
+                let secondNewBookList = [];
+                let newBookList = bookList1;
+                let bookListLength = bookList1.length;
+                for(let i = 0; i < bookListLength; i++){secondNewBookList.push(newBookList[i]);}
+                var book_index = bookList1.indexOf(bookName);
+                if (book_index >= 0) {
+                
+                    secondNewBookList.splice(book_index, 1);
+                    return secondNewBookList;
+
+                // Change code above this line
+                }
+            }
+
+            var newBookList = add(bookList, 'A Brief History of Time');
+            var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+            var newestBookList = remove((add(bookList, 'A Brief History of Time')), 'On The Electrodynamics of Moving Bodies');
+
+            console.log(bookList);
+            console.log(newBookList);
+            console.log(newerBookList);
+            console.log(newestBookList);
+        </script>
+    </body>
+</html>
